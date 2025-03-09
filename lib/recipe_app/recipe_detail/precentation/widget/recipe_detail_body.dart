@@ -3,7 +3,6 @@ import 'package:categorylogin/core/utils.dart';
 import 'package:categorylogin/recipe_app/recipe_detail/precentation/widget/recipe_detail_video.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 
 import '../view/recipe_detail_view_model.dart';
 
