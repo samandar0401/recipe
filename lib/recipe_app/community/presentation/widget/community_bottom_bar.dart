@@ -51,7 +51,6 @@ class CommunityBottomBar extends StatelessWidget {
                     // context.go(categories);
                   },
                 ),
-
                 RecipeIconButton(
                   image: "assets/icons/profile.svg",
                   callback: () {},

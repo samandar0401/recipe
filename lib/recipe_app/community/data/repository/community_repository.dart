@@ -16,6 +16,4 @@ class CommunityRepository {
       return community!;
     }
   }
-
-
 }

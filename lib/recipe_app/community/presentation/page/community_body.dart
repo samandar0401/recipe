@@ -106,7 +106,7 @@ class _CommunityBodyState extends State<CommunityBody> {
           _buildCommunityList(vm, "oldest"),
         ],
       ),
-       bottomNavigationBar: const CommunityBottomBar(),
+      bottomNavigationBar: const CommunityBottomBar(),
     );
   }
 
@@ -155,7 +155,7 @@ class _CommunityBodyState extends State<CommunityBody> {
               Stack(
                 children: [
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       context.push('/recipe-detail/${post.id}');
                     },
                     child: ClipRRect(
