@@ -46,6 +46,7 @@ dependencies:
   cached_network_image: ^3.4.1
   video_player: ^2.9.3
   flutter_screenutil: ^5.9.3
+  flutter_bloc: ^9.1.0
 
 dev_dependencies:
   flutter_test:

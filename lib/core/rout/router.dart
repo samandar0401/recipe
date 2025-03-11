@@ -1,9 +1,11 @@
 import 'dart:developer';
 import 'package:categorylogin/core/rout/routes.dart';
+import 'package:categorylogin/recipe_app/categories/data/state/categories_cubit.dart';
 import 'package:categorylogin/recipe_app/community/presentation/page/community_body.dart';
 import 'package:categorylogin/recipe_app/community/presentation/view/community_view_model.dart';
 import 'package:categorylogin/recipe_app/home_page/presentation/page/home_view.dart';
 import 'package:categorylogin/recipe_app/home_page/presentation/view/home_page_view_model.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../recipe_app/Login/presentation/login_view.dart';
@@ -17,12 +19,15 @@ import '../../recipe_app/recipe_detail/precentation/page/recipe_detail.dart';
 import '../../recipe_app/recipe_detail/precentation/view/recipe_detail_view_model.dart';
 
 final router = GoRouter(
-  initialLocation: Routes.community,
+  initialLocation: Routes.categories,
   routes: [
     GoRoute(
       path: Routes.categories,
-      builder: (context, state) => CategoriesView(
-        vm: CategoriesViewModel(catRepo: context.read()),
+      builder: (context, state) => BlocProvider(
+        create: (context) => CategoriesCubit(
+          catRepo: context.read(),
+        ),
+        child: CategoriesView(),
       ),
     ),
     GoRoute(
