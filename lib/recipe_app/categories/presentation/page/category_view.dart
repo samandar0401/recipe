@@ -16,9 +16,9 @@ class CategoriesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CategoriesCubit, CategoriesState>(
+    return BlocBuilder<CategoriesBloc, CategoriesState>(
       builder: (context, state) => RefreshIndicator(
-        onRefresh: context.read<CategoriesCubit>().load,
+        onRefresh:() async => context.read<CategoriesBloc>().add(CategoriesLoading()),
         child: Scaffold(
           backgroundColor: AppColors.bacround,
           extendBody: true,

@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:categorylogin/core/rout/routes.dart';
 import 'package:categorylogin/recipe_app/categories/data/state/categories_cubit.dart';
+import 'package:categorylogin/recipe_app/category_reviews/presentation/page/reviews_detail.dart';
 import 'package:categorylogin/recipe_app/community/presentation/page/community_body.dart';
 import 'package:categorylogin/recipe_app/community/presentation/view/community_view_model.dart';
 import 'package:categorylogin/recipe_app/home_page/presentation/page/home_view.dart';
@@ -19,12 +20,12 @@ import '../../recipe_app/recipe_detail/precentation/page/recipe_detail.dart';
 import '../../recipe_app/recipe_detail/precentation/view/recipe_detail_view_model.dart';
 
 final router = GoRouter(
-  initialLocation: Routes.categories,
+  initialLocation: Routes.reviews,
   routes: [
     GoRoute(
       path: Routes.categories,
       builder: (context, state) => BlocProvider(
-        create: (context) => CategoriesCubit(
+        create: (context) => CategoriesBloc(
           catRepo: context.read(),
         ),
         child: CategoriesView(),
@@ -83,6 +84,10 @@ final router = GoRouter(
         ),
         child: CommunityBody(),
       ),
+    ),
+    GoRoute(
+      path: Routes.reviews,
+      builder: (context, state) => CategoriesReviews(),
     )
   ],
 );
