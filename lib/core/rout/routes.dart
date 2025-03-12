@@ -6,4 +6,6 @@ class Routes{
   static const String home = '/home-page';
   static const String community = '/community';
   static const String reviews = '/reviews';
+  static const String createReviews = '/createReviews/:recipeId';
+  static const String reView='/reviews/:recipeId';
 }
