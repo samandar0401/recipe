@@ -25,7 +25,7 @@ final router = GoRouter(
   initialLocation:'/reviews/2',
   routes: [
     GoRoute(
-      path: Routes.categories,
+      path: Routes.home,
       builder: (context, state) =>
           BlocProvider(
             create: (context) =>
