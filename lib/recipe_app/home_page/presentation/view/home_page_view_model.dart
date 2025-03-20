@@ -89,10 +89,3 @@ class HomePageViewModel extends ChangeNotifier {
   }
 }
 
-/*
-ApiCLientdagi metodlarni nomini to'g'irlash
-repositorydagi metodlani nominiyam to'g'irlash kerak
-view model ichidagi o'zgaruvchilani nomini to'g'irlab chiqish kerak
-o'zgaruvchilani typeniyam to'g'irlab chiqish kerak
-
- */
