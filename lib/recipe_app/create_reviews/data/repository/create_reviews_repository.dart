@@ -1,10 +1,11 @@
 import 'dart:io';
 import 'package:categorylogin/core/client.dart';
-import 'package:categorylogin/recipe_app/category_reviews/data/model/reviews_model.dart';
 import 'package:categorylogin/recipe_app/create_reviews/data/model/create_reviews_model.dart';
+import '../model/recipe_create_review_model.dart';
+import '../model/reviews_model.dart';
 
-class ReviewRepository {
-  ReviewRepository({required this.client});
+class CreateReviewsRepository {
+  CreateReviewsRepository({required this.client});
 
   final ApiClient client;
 
@@ -15,20 +16,22 @@ class ReviewRepository {
     required bool recommend,
     File? photo,
   }) async {
-    final reviewModel = CreateReviewModel(
-      recipeId: recipeId,
+    final reviewModel = CreateReviewsModel(
       comment: comment,
       rating: rating,
-      recommend: recommend,
       photo: photo,
+      recipeId: recipeId,
+      recommend: recommend,
     );
     final result = await client.createReview(reviewModel);
     return result;
   }
-
-  Future<List<ReviewsModel>> fetchReviewsByRecipe(int recipeId) async {
-    final rawReviews = await
-    client.genericGetRequest<List<dynamic>>('/reviews/list?recipeId=$recipeId');
-    return rawReviews.map((review) => ReviewsModel.fromJson(review)).toList();
+  Future<List<ReviewRecipeModel>> fetchReviewsByRecipe(int recipeId) async {
+    final rawReviews = await client.genericGetRequest<List<dynamic>>('/reviews/list?recipeId=$recipeId');
+    return rawReviews.map((review) => ReviewRecipeModel.fromJson(review)).toList();
+  }
+  Future<RecipeCreateReviewModel> fetchRecipeForCreateReview(int recipeId) async {
+    var rawRecipe = await client.genericGetRequest<dynamic>('/recipes/create-review/$recipeId');
+    return RecipeCreateReviewModel.fromJson(rawRecipe);
   }
 }

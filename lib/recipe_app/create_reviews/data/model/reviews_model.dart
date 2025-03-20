@@ -1,4 +1,5 @@
-import 'package:categorylogin/recipe_app/create_reviews/data/model/reviews_user_recipe_model.dart';
+
+import 'package:categorylogin/recipe_app/create_reviews/data/model/reviews_user__recipe_model.dart';
 
 class ReviewRecipeModel {
   final int id;
@@ -12,8 +13,9 @@ class ReviewRecipeModel {
     required this.comment,
     required this.rating,
     required this.user,
-    required this.created
-});
+    required this.created,
+  });
+
   factory ReviewRecipeModel.fromJson(Map<String, dynamic> json) {
     return ReviewRecipeModel(
       id: json['id'],

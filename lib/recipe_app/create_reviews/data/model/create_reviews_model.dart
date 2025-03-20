@@ -2,19 +2,19 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 
-class CreateReviewModel {
+class CreateReviewsModel {
   final int recipeId;
   final String comment;
   final int rating;
   final bool recommend;
   final File? photo;
 
-  CreateReviewModel({
-    required this.recipeId,
+  CreateReviewsModel({
     required this.comment,
     required this.rating,
+    required this.photo,
+    required this.recipeId,
     required this.recommend,
-    required this.photo
   });
 
   Future<Map<String, dynamic>> toJson() async {
@@ -23,11 +23,10 @@ class CreateReviewModel {
       "comment": comment,
       "rating": rating,
       "recommend": recommend,
-      "image": photo != null ? await MultipartFile.fromFile(
-          photo!.path, filename: photo!
-          .path
-          .split('/')
-          .last) : null,
+      "image": photo != null
+          ? await MultipartFile.fromFile(photo!.path,
+              filename: photo!.path.split('/').last)
+          : null,
     };
   }
 }

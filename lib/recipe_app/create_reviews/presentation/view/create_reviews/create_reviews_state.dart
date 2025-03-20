@@ -1,8 +1,9 @@
 import 'dart:io';
 
-import 'package:categorylogin/recipe_app/create_reviews/data/model/reviews_model.dart';
 import 'package:equatable/equatable.dart';
 
+import '../../../data/model/create_reviews_model.dart';
+import '../../../data/model/recipe_create_review_model.dart';
 
 enum CreateReviewStatus { idle, loading, error, submitted }
 
@@ -14,7 +15,7 @@ class CreateReviewState extends Equatable {
 
   final File? pickedImage;
 
-  final ReviewRecipeModel? recipeModel;
+  final RecipeCreateReviewModel? recipeModel;
 
   const CreateReviewState({
     required this.recipeId,
@@ -42,7 +43,7 @@ class CreateReviewState extends Equatable {
     CreateReviewStatus? status,
     File? pickedImage,
     bool? doesRecommend,
-    ReviewRecipeModel? recipeModel,
+    RecipeCreateReviewModel? recipeModel,
   }) {
     return CreateReviewState(
       recipeId: recipeId ?? this.recipeId,

@@ -1,13 +1,14 @@
 // import 'package:cached_network_image/cached_network_image.dart';
-// import 'package:categorylogin/recipe_app/category_reviews/data/model/reviews_model.dart';
-// import 'package:categorylogin/recipe_app/create_reviews/presentation/widget/reviews_resipe_rating_and_reviews.dart';
-// import 'package:categorylogin/recipe_app/recipe_detail/data/model/detail_model.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:go_router/go_router.dart';
-// import '../../../../core/rout/routes.dart';
-// import '../../../../core/utils.dart';
+// import 'package:recipe/core/routing/routes.dart';
+// import 'package:recipe/core/utils/colors.dart';
+// import 'package:recipe/data/models/recipe/reviews_recipe_model.dart';
+// import 'package:recipe/features/common/widgets/recipe_text_button_container.dart';
+//
 // import 'reviews_recipe_item_user.dart';
+// import 'reviews_recipe_rating_and_reviews.dart';
 //
 // class ReviewsRecipeItem extends StatelessWidget {
 //   const ReviewsRecipeItem({
@@ -15,7 +16,7 @@
 //     required this.recipe,
 //   });
 //
-//   final RecipeDetailModel recipe;
+//   final ReviewsRecipeModel recipe;
 //
 //   @override
 //   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@
 //       height: 224.h,
 //       padding: EdgeInsets.symmetric(horizontal: 36.w, vertical: 30.h),
 //       decoration: BoxDecoration(
-//         color: AppColors.redpinkmain,
+//         color: AppColors.redPinkMain,
 //         borderRadius: BorderRadius.circular(20),
 //       ),
 //       child: Row(
@@ -32,7 +33,7 @@
 //           ClipRRect(
 //             borderRadius: BorderRadius.circular(14),
 //             child: CachedNetworkImage(
-//               imageUrl: recipe.photo,
+//               imageUrl: recipe.image,
 //               width: 164.w,
 //               height: 164.h,
 //               fit: BoxFit.cover,
@@ -59,7 +60,7 @@
 //               RecipeTextButtonContainer(
 //                 text: "Add Review",
 //                 fontSize: 15.spMin,
-//                 textColor: AppColors.redpinkmain,
+//                 textColor: AppColors.redPinkMain,
 //                 containerColor: Colors.white,
 //                 containerWidth: 126.w,
 //                 containerHeight: 24.h,

@@ -181,7 +181,7 @@ class ApiClient {
         : Exception("Ma'lumot kelmadi");
   }
 
-  Future<bool> createReview(CreateReviewModel model) async {
+  Future<bool> createReview(CreateReviewsModel model) async {
     final formData = FormData.fromMap(await model.toJson());
     final response = await dio.post(
       '/reviews/create',
